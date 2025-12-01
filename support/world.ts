@@ -1,32 +1,32 @@
 // src/support/world.ts
 import { setWorldConstructor, IWorldOptions, World } from "@cucumber/cucumber";
-import { Page, Browser, chromium } from "playwright";
+import { Browser, BrowserContext, Page, chromium } from "playwright";
 
 export class CustomWorld extends World {
-    public page!: Page;
-    public browser!: Browser;
+  public browser!: Browser;
+  public context!: BrowserContext;
+  public page!: Page;
 
-    constructor(options: IWorldOptions) {
-        super(options);
-    }
+  constructor(options: IWorldOptions) {
+    super(options);
+  }
 
-    // Initialisation du navigateur et de la page
-    async init() {
-        this.browser = await chromium.launch({
-            headless: false,  // false pour voir le navigateur
-            slowMo: 50,       // ralentit un peu les actions pour le debug
-            args: ['--start-maximized']
-        });
-        const context = await this.browser.newContext();
-        this.page = await context.newPage();
-        // tu peux ajouter ici d'autres configurations si nécessaire
-    }
+  async init() {
+    console.log("🚀 init() starting...");
+    this.browser = await chromium.launch({ headless: false, slowMo: 50 });
+    this.context = await this.browser.newContext();
+    this.page = await this.context.newPage();
+    console.log("✅ page created:", !!this.page);
+  }
 
-    // Fermeture du navigateur
-    async close() {
-        await this.page.close();
-        await this.browser.close();
-    }
+  async close() {
+    await this.page.close();
+    await this.context.close();
+    await this.browser.close();
+  }
 }
 
+// Enregistre le World
 setWorldConstructor(CustomWorld);
+
+console.log("⚡ World.ts is loaded");

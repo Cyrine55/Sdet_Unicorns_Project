@@ -1,7 +1,22 @@
 {
   "default": {
-    "require": ["src/steps/**/*.ts"], 
-    "format": ["progress", "json:reports/cucumber_report.json"], 
-    "publishQuiet": true
+    "requireModule": [
+      "ts-node/register"
+    ],
+   "require": [
+  "support/world.ts",
+  "support/hooks.ts",
+  "src/stepDefinitions/**/*.ts"
+]
+,
+    "paths": [
+      "src/features/**/*.feature"
+    ],
+    "format": [
+      "json:reports/cucumber-report.json",
+      "progress"
+    ],
+    "publishQuiet": true,
+    "timeout": 60000
   }
 }

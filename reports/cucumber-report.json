@@ -1,0 +1,131 @@
+[
+  {
+    "description": "Je veux assurer la création du compte",
+    "elements": [
+      {
+        "description": "",
+        "id": "register-functionnality;verify-registration",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Verify registration",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 477442999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "launch the application",
+            "match": {
+              "location": "src\\stepDefinitions\\myAccountStepDef.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4998818899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click on My account menu",
+            "match": {
+              "location": "src\\stepDefinitions\\myAccountStepDef.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 372400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "Enter username \"Cyrine\"",
+            "match": {
+              "location": "src\\stepDefinitions\\myAccountStepDef.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 368999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Enter emailAdress \"test@test1.com\"",
+            "match": {
+              "location": "src\\stepDefinitions\\myAccountStepDef.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 204599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "Enter a strong password \"Test123\"",
+            "match": {
+              "location": "src\\stepDefinitions\\myAccountStepDef.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 178900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "Click on register",
+            "match": {
+              "location": "src\\stepDefinitions\\myAccountStepDef.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 227499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "un message descriptif affiché avec \"Log out\" link",
+            "match": {
+              "location": "src\\stepDefinitions\\myAccountStepDef.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 223999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 291164199
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "register-functionnality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Register functionnality",
+    "tags": [],
+    "uri": "src\\features\\register.feature"
+  }
+]
